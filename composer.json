@@ -1,5 +1,5 @@
 {
-    "name": "spatie/laravel-activitylog",
+    "name": "skiddyvn/laravel-activitylog-mongodb",
     "description": "A very simple activity logger to monitor the users of your website or application",
     "license": "MIT",
     "keywords": [
@@ -35,6 +35,7 @@
         "illuminate/config": "^8.0 || ^9.0 || ^10.0 || ^11.0",
         "illuminate/database": "^8.69 || ^9.27 || ^10.0 || ^11.0",
         "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+        "mongodb/laravel-mongodb": "^4.4",
         "spatie/laravel-package-tools": "^1.6.3"
     },
     "require-dev": {

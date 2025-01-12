@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+    laravel-activitylog-mongodb-composer:
+        build: .
+        container_name: laravel_activitylog_mongodb_composer
+        command: composer install
+        user: "${UID}:${GID}"
+        volumes:
+            - .:/data/laravel-activitylog-mongodb

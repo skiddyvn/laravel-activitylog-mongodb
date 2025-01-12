@@ -3,9 +3,10 @@
 namespace Spatie\Activitylog;
 
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
-use Illuminate\Database\Eloquent\Builder;
+use MongoDB\Laravel\Eloquent\Builder;
 
 class CleanActivitylogCommand extends Command
 {
@@ -35,7 +36,7 @@ class CleanActivitylogCommand extends Command
         $activity = ActivitylogServiceProvider::getActivityModelInstance();
 
         $amountDeleted = $activity::query()
-            ->where('created_at', '<', $cutOffDate)
+            ->where('created_at', '<', new DateTime($cutOffDate))
             ->when($log !== null, function (Builder $query) use ($log) {
                 $query->inLog($log);
             })
